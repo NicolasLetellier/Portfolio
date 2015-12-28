@@ -1,0 +1,340 @@
+/* Declaraciones Font-Face */
+
+@font-face {
+    font-family: 'kaushan_scriptregular';
+    src: url('kaushanscript-regular-webfont.eot');
+    src: url('kaushanscript-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('kaushanscript-regular-webfont.woff2') format('woff2'),
+         url('kaushanscript-regular-webfont.woff') format('woff'),
+         url('kaushanscript-regular-webfont.ttf') format('truetype'),
+         url('kaushanscript-regular-webfont.svg#kaushan_scriptregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'source_sans_probold';
+    src: url('sourcesanspro-bold-webfont.eot');
+    src: url('sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('sourcesanspro-bold-webfont.woff2') format('woff2'),
+         url('sourcesanspro-bold-webfont.woff') format('woff'),
+         url('sourcesanspro-bold-webfont.ttf') format('truetype'),
+         url('sourcesanspro-bold-webfont.svg#source_sans_probold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+a {
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+
+
+/* CSS header */
+
+.fondo {
+  background: #00574c url('../imagesfond/patternheader3.svg');
+  background-position: 35% 60%;
+  background-attachment: fixed;
+  box-shadow: inset 2px 2px 8px 2px #222222;
+}
+
+
+.fondooscuro{
+  background-color: rgba(0, 87, 76, 0.65);
+  margin: 17px;
+  border-radius: 10px;
+}
+
+
+#titulonicolasletellier {
+  color: #ffb797;
+  font-family: 'kaushan_scriptregular', Arial, sans-serif;
+  padding: 10px 10px 0 10px;
+  font-size: 4.4em;
+  line-height: 1.14;
+  text-align: center;
+  text-shadow:
+    -2px -2px 0 #00574c,  
+    2px -2px 0 #00574c,
+    -2px 2px 0 #00574c,
+    2px 2px 0 #00574c;
+}
+
+#tituloportfolio {
+  margin: -5px 15px 13px 15px;
+  color: #4bffe1;
+  font-family: 'source_sans_probold', Arial, sans-serif;
+  padding: 0 10px 5px 10px;
+  font-size: 5.4em;
+  text-align: center;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  line-height: 0.9;
+  text-shadow:
+    -2px -2px 0 #00574c,  
+    2px -2px 0 #00574c,
+    -2px 2px 0 #00574c,
+    2px 2px 0 #00574c;
+}
+
+
+/* CSS Cuerpo Principal "Main" */
+
+main {
+  color: #333;
+  padding: 50px 0 30px;
+  background: white url('../imagesfond/lightpaperfibers.png');
+}
+
+#divcirculoweb, #divcirculographic {
+  margin: 20px 0;
+}
+
+h2 {
+  font-family: 'source_sans_probold', Arial, sans-serif;
+  text-align: center;
+  margin: auto;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  transition: all 0.15s ease-in-out;
+}
+
+.cerrado h2{
+  background-color: #008c7c;
+  color: white;
+}
+
+.abierto h2{
+  background-color: #00574c;
+  color: #ffbb9d;
+}
+
+#h2web {
+  font-size: 46px;
+  padding: 58px 0 0 0;
+}
+
+#h2graphic {
+  font-size: 42px;
+  padding: 62px 0 0 0;
+}
+
+.tagh2 {
+  font-family: 'source_sans_probold', Arial, sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  color: #00574c;
+}
+
+
+
+
+/* CSS especificos cuando esté habilitado Javascript (animacion circulos) */
+
+.js .folioweb , .js .foliographic {
+  display: none;
+}
+
+.js h2:hover {
+  cursor: pointer;
+  background-color: #00574c;
+  transform: translateY(-5px);
+}
+
+
+/* CSS especificos cuando esté DEShabilitado Javascript (animacion circulos) */
+
+.no-js h2 {
+  background-color: #00574c;
+  color: #ffbb9d;
+}
+
+.no-js #graphic1 {
+  margin-top: 150px;
+}
+
+
+
+
+/* CSS del Overlay-Fade-In  ++ RETOCADO ++  */
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 0.5s linear;
+}
+
+.image-overlay-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /*  NO hay manera satisfactoria esteticamente de hacer visible el texto que salga de la caja cuando se reduce demasiado la pantalla: 
+      overflow-y: scroll > deja barra de scroll aun cuando el texto es todo visible > FEO! */
+  top: 0;
+  left: 0;
+  transition: all 0.5s linear;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay-fade-in img {
+  transition: all 0.3s ease-in-out;
+}
+
+.image-overlay-content h3 {
+  color: white;
+  font-size: 1.4em;
+  margin-top: 0;
+  padding: 8px 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s linear;
+}
+
+.image-overlay-content p {
+  margin: 5px 0 0;
+  color: white;
+  font-size: 1.2em;
+  transition: all 0.5s linear;
+}
+
+
+/* CSS para Botones si hace falta :
+
+.image-overlay-content .button {
+  display: inline-block;
+  padding: 7px 13px;
+  background: #e2e2e2;
+  color: #222;
+  box-shadow: 0 0 2px #000;
+  border: 1px solid #999;
+  transition: all 0.1s linear;
+}
+.image-overlay-content .button:hover {
+  box-shadow: 0 0 5px #000;
+}
+
+*/
+
+
+.overlay-fade-in:hover img {
+  transform: scale(1.2);
+}
+.overlay-fade-in:hover .image-overlay-content {
+  opacity: 1;
+}
+
+
+
+#happyrockers img{
+  margin: auto;
+}
+
+/* CSS para estilo y margenes entre los Folios */
+
+
+.folioweb {
+  margin: 40px 0 40px 0;
+}
+
+#dogyft {
+  margin-bottom: 70px;
+}
+
+#divcirculografic {
+  margin-bottom: 40px;
+}
+
+.foliographic {
+  margin: 40px 0;
+}
+
+#happyrockers {
+  margin-bottom: 60px;
+}
+
+.foliographic p{
+  padding: 0 5px;
+}
+
+.folioweb a, .foliographic a, footer a{
+  color: white;
+  text-decoration: underline;
+}
+
+.folioweb a:hover, .foliographic a:hover, footer a:hover{
+  color: #ffbb9d;
+}
+
+
+
+
+/* CSS del footer -- ver CSS Header para el fondo y fondfonce */
+
+.fondomasoscuro{
+  background-color: rgba(0, 87, 76, 0.75);
+  margin: 30px 0 10px;
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+
+#textopresentacion {
+  margin-bottom: 80px;
+}
+
+footer p {
+  color: white;
+  font-size: 1.1em;
+}
+
+#fotonico {
+  height: 180px;
+  width: 180px;
+  margin: auto;
+}
+
+#fotonico img{
+  border-radius: 50%;
+}
+
+#titulofooter {
+  color: #ffbb9d;
+  font-size: 1.9em;
+  text-align: center;
+}
+
+#subtitulofooter {
+  font-size: 1.7em;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 1.4em;
+  color: #ffbb9d;
+  text-align: center;
+}
+
+#motivacion {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+#fotocontacto p{
+  text-align: center;
+}
+
+#fotocontacto .titulo{
+  margin: 30px;
+}
+
+
