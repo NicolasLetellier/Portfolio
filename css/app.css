@@ -31,7 +31,19 @@ a {
   transition: all 0.15s linear;
 }
 
+a:link, a:active, a:visited {
+  color: white;
+  text-decoration: underline;
+}
 
+a:hover {
+  color: #ffbb9d;
+}
+
+
+a:visited {
+
+}
 
 /* CSS header */
 
@@ -266,17 +278,6 @@ h2 {
 .foliographic p{
   padding: 0 5px;
 }
-
-.folioweb a, .foliographic a, footer a{
-  color: white;
-  text-decoration: underline;
-}
-
-.folioweb a:hover, .foliographic a:hover, footer a:hover{
-  color: #ffbb9d;
-}
-
-
 
 
 /* CSS del footer -- ver CSS Header para el fondo y fondfonce */
